@@ -1,0 +1,10 @@
+digraph Domain {
+  graph [rankdir=LR, bgcolor="white", pad="0.25", nodesep="0.6", ranksep="0.8", fontname="Arial", label="MODELO CONCEITUAL / DIAGRAMA DE CLASSES UML", labelloc="t", fontsize=18, fontcolor="#1d2b45"];
+  node [shape=plain, fontname="Arial"];
+  edge [dir=none, color="#71809a", penwidth=1.5, fontname="Arial", fontsize=10, fontcolor="#40516f"];
+  Usuario [label=< <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#b7c6dd"><TR><TD BGCOLOR="#eaf0ff"><B>Usuario</B></TD></TR><TR><TD ALIGN="LEFT">idUsuario: inteiro</TD></TR><TR><TD ALIGN="LEFT">nome: texto</TD></TR><TR><TD ALIGN="LEFT">email: texto</TD></TR></TABLE> >];
+  Tarefa [label=< <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#b7c6dd"><TR><TD BGCOLOR="#e7f7f0"><B>Tarefa</B></TD></TR><TR><TD ALIGN="LEFT">idTarefa: inteiro</TD></TR><TR><TD ALIGN="LEFT">titulo: texto</TD></TR><TR><TD ALIGN="LEFT">descricao: texto</TD></TR><TR><TD ALIGN="LEFT">dataPrazo: data (opcional)</TD></TR><TR><TD ALIGN="LEFT">status: texto</TD></TR><TR><TD ALIGN="LEFT">prioridade: texto</TD></TR></TABLE> >];
+  Categoria [label=< <TABLE BORDER="0" CELLBORDER="1" CELLSPACING="0" CELLPADDING="7" COLOR="#b7c6dd"><TR><TD BGCOLOR="#fff4df"><B>Categoria</B></TD></TR><TR><TD ALIGN="LEFT">idCategoria: inteiro</TD></TR><TR><TD ALIGN="LEFT">nome: texto</TD></TR><TR><TD ALIGN="LEFT">descricao: texto (opcional)</TD></TR></TABLE> >];
+  Usuario -> Tarefa [label="1 : 0..*"];
+  Categoria -> Tarefa [label="0..* : 0..1"];
+}

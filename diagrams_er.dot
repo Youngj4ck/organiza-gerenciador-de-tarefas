@@ -1,0 +1,10 @@
+digraph ER {
+  graph [rankdir=LR, bgcolor="white", pad="0.25", nodesep="0.6", ranksep="0.8", fontname="Arial", label="MODELO LOGICO / DIAGRAMA ENTIDADE-RELACIONAMENTO", labelloc="t", fontsize=18, fontcolor="#1d2b45"];
+  node [shape=plain, fontname="Arial"];
+  edge [color="#71809a", penwidth=1.5, fontname="Arial", fontsize=10, fontcolor="#40516f"];
+  USUARIOS [label=< <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="7" COLOR="#b7c6dd"><TR><TD BGCOLOR="#eaf0ff"><B>USUARIOS</B></TD></TR><TR><TD ALIGN="LEFT"><B>PK</B> id_usuario</TD></TR><TR><TD ALIGN="LEFT">nome</TD></TR><TR><TD ALIGN="LEFT">email (UNIQUE)</TD></TR><TR><TD ALIGN="LEFT">criado_em</TD></TR></TABLE> >];
+  TAREFAS [label=< <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="7" COLOR="#b7c6dd"><TR><TD BGCOLOR="#e7f7f0"><B>TAREFAS</B></TD></TR><TR><TD ALIGN="LEFT"><B>PK</B> id_tarefa</TD></TR><TR><TD ALIGN="LEFT"><B>FK</B> id_usuario</TD></TR><TR><TD ALIGN="LEFT"><B>FK</B> id_categoria (NULL)</TD></TR><TR><TD ALIGN="LEFT">titulo, descricao</TD></TR><TR><TD ALIGN="LEFT">data_prazo, status</TD></TR><TR><TD ALIGN="LEFT">prioridade, criado_em</TD></TR><TR><TD ALIGN="LEFT">atualizado_em</TD></TR></TABLE> >];
+  CATEGORIAS [label=< <TABLE BORDER="1" CELLBORDER="0" CELLSPACING="0" CELLPADDING="7" COLOR="#b7c6dd"><TR><TD BGCOLOR="#fff4df"><B>CATEGORIAS</B></TD></TR><TR><TD ALIGN="LEFT"><B>PK</B> id_categoria</TD></TR><TR><TD ALIGN="LEFT">nome (UNIQUE)</TD></TR><TR><TD ALIGN="LEFT">descricao</TD></TR><TR><TD ALIGN="LEFT">criado_em</TD></TR></TABLE> >];
+  USUARIOS -> TAREFAS [label="1 : N\nFK obrigatoria", dir="none"];
+  CATEGORIAS -> TAREFAS [label="1 : N\nFK opcional em TAREFAS", dir="none"];
+}

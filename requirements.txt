@@ -1,0 +1,2 @@
+# Driver para conectar o back-end Python ao MySQL Server.
+mysql-connector-python>=9.0,<10
