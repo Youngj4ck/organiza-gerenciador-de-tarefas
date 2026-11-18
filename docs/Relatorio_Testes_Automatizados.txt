@@ -1,0 +1,20 @@
+RELATORIO DE TESTES AUTOMATIZADOS — ORGANIZA / PIT-II
+Data de execução: 17/11/2026
+Comando: python -m unittest discover -s tests -v
+Ambiente: Python 3.13; servidor HTTP local; banco SQLite temporário para isolamento dos testes.
+
+Resultado final: 10 testes executados; 10 aprovados; 0 reprovados.
+
+Casos cobertos:
+T01 — Página inicial HTML servida com sucesso.
+T02 — Endpoint de saúde da API retorna status OK.
+T03 — Cadastro de categoria válida.
+T04 — Usuários e categorias de demonstração carregados.
+T05 — Cadastro e persistência de tarefa.
+T06 — Validação rejeita título menor que o limite.
+T07 — Atualização de status da tarefa.
+T08 — Filtro por status.
+T09 — Indicadores do painel refletem a soma das tarefas por status.
+T10 — Exclusão de tarefa.
+
+Observação: os testes acima são automatizados e técnicos. Eles NÃO substituem os cinco testes de aceitação com colegas exigidos pelo modelo da instituição. Esses testes precisam ser executados por cinco pessoas reais e registrados no relatório.

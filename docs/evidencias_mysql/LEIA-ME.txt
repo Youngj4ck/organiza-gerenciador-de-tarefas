@@ -1,0 +1,15 @@
+EVIDENCIAS MANUAIS — MYSQL WORKBENCH
+
+Capturas de tela fornecidas pelo estudante durante a validação do banco gerenciador_tarefas.
+
+01 — Tabelas existentes e campos da tabela usuarios.
+02 — Estrutura da tabela categorias.
+03 — Estrutura da tabela tarefas.
+04 — Consulta ao INFORMATION_SCHEMA confirmando as FKs tarefas.id_categoria -> categorias.id_categoria e tarefas.id_usuario -> usuarios.id_usuario.
+05 — Inserção de usuário/categoria/tarefa de teste e consulta com JOIN das três tabelas.
+06 — UPDATE do status da tarefa id_tarefa 3 para Concluída.
+07 — Filtro SELECT por status = Concluída.
+08 — Consulta da tarefa temporária antes da exclusão.
+09 — Consulta vazia após DELETE da tarefa temporária.
+
+Observação: estas evidências demonstram a execução manual de comandos SQL no MySQL Workbench. A integração da aplicação web com o MySQL deve ser confirmada separadamente pelo endpoint http://127.0.0.1:8000/api/health após configurar o arquivo .env e iniciar o app.

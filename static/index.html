@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Gerenciador de tarefas acadêmicas e pessoais.">
+  <title>Organiza - Gerenciador de Tarefas</title>
+  <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar">
+      <div class="brand"><span class="brand-mark">O</span><div><strong>organiza</strong><small>GERENCIADOR DE TAREFAS</small></div></div>
+      <div class="side-label">MENU PRINCIPAL</div>
+      <button class="nav-item active" id="nav-all"><span>▦</span> Todas as tarefas</button>
+      <button class="nav-item" data-status="Pendente"><span>◷</span> Pendentes</button>
+      <button class="nav-item" data-status="Em andamento"><span>◉</span> Em andamento</button>
+      <button class="nav-item" data-status="Concluída"><span>✓</span> Concluídas</button>
+      <div class="side-bottom"><div class="profile-avatar">UD</div><div><strong>Usuário demonstração</strong><small>Área local de demonstração</small></div></div>
+    </aside>
+    <main class="main-content">
+      <header class="topbar"><div><span class="eyebrow">ESPAÇO DE ORGANIZAÇÃO</span><h1>Minhas tarefas</h1><p>Planeje, acompanhe e conclua suas atividades.</p></div><button class="primary-btn" id="new-task">＋ Nova tarefa</button></header>
+      <section class="stats" aria-label="Resumo de tarefas">
+        <article class="stat-card"><span class="stat-label">Total de tarefas</span><strong id="stat-total">0</strong><span class="stat-note">Cadastradas no sistema</span></article>
+        <article class="stat-card"><span class="stat-label">Pendentes</span><strong id="stat-pending">0</strong><span class="stat-note">Aguardando início</span></article>
+        <article class="stat-card"><span class="stat-label">Em andamento</span><strong id="stat-progress">0</strong><span class="stat-note">Atividades em execução</span></article>
+        <article class="stat-card"><span class="stat-label">Concluídas</span><strong id="stat-done">0</strong><span class="stat-note">Finalizadas</span></article>
+      </section>
+      <section class="toolbar"><div><h2 id="list-title">Todas as tarefas</h2><span id="task-count" class="muted">Carregando...</span></div><div class="filters"><input type="search" id="search" placeholder="Buscar tarefa..." aria-label="Buscar tarefa"><select id="category-filter" aria-label="Filtrar por categoria"><option value="">Todas as categorias</option></select><button class="secondary-btn" id="manage-categories">＋ Categoria</button></div></section>
+      <section id="task-list" class="task-list" aria-live="polite"></section>
+      <footer>Projeto acadêmico PIT-II · Protótipo local · Os dados ficam armazenados no banco SQLite deste computador.</footer>
+    </main>
+  </div>
+  <dialog id="task-dialog" class="modal"><form id="task-form" method="dialog"><div class="modal-head"><div><span class="eyebrow">CADASTRO</span><h2 id="form-title">Nova tarefa</h2></div><button class="icon-btn" type="button" data-close="task-dialog" aria-label="Fechar">×</button></div><input type="hidden" id="task-id"><label>Título <input id="title" maxlength="120" required minlength="3" placeholder="Ex.: Entregar atividade de banco de dados"></label><label>Descrição <textarea id="description" rows="3" placeholder="Detalhes da atividade"></textarea></label><div class="form-grid"><label>Responsável <select id="user" required></select></label><label>Categoria <select id="category"><option value="">Sem categoria</option></select></label><label>Prazo <input id="due-date" type="date"></label><label>Prioridade <select id="priority"><option>Baixa</option><option selected>Média</option><option>Alta</option></select></label><label>Status <select id="status"><option>Pendente</option><option>Em andamento</option><option>Concluída</option></select></label></div><div class="modal-actions"><button type="button" class="secondary-btn" data-close="task-dialog">Cancelar</button><button type="submit" class="primary-btn">Salvar tarefa</button></div></form></dialog>
+  <dialog id="category-dialog" class="modal small-modal"><form id="category-form" method="dialog"><div class="modal-head"><div><span class="eyebrow">ORGANIZAÇÃO</span><h2>Nova categoria</h2></div><button class="icon-btn" type="button" data-close="category-dialog" aria-label="Fechar">×</button></div><label>Nome <input id="category-name" required minlength="2" maxlength="60" placeholder="Ex.: Faculdade"></label><label>Descrição <textarea id="category-description" rows="2"></textarea></label><div class="modal-actions"><button type="button" class="secondary-btn" data-close="category-dialog">Cancelar</button><button type="submit" class="primary-btn">Criar categoria</button></div></form></dialog>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+  <script src="/static/app.js" defer></script>
+</body></html>
